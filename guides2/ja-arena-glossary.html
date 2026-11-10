@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boss Lab Arena用語集 — 非同期PvPで使う言葉を整理</title>
+<meta name="description" content="Boss LabのArena用語を開発者視点で解説。非同期PvP、公開ボス、60+パーツ、Android専用。">
+<style>
+:root {
+  --bg:#101820; --card:#182430; --text:#eef6fb; --muted:#8fa6b8;
+  --accent:#3ecfb4; --accent2:#f0b429; --line:#2a4050; --chip:#1e3340;
+}
+* { box-sizing:border-box; }
+body {
+  margin:0; font-family:"Hiragino Sans","Noto Sans JP","Segoe UI",Roboto,sans-serif;
+  background:
+    radial-gradient(900px 420px at 0% 0%, rgba(62,207,180,.12), transparent 55%),
+    radial-gradient(700px 380px at 100% 10%, rgba(240,180,41,.08), transparent 50%),
+    var(--bg);
+  color:var(--text); line-height:1.85;
+}
+a { color:var(--accent); }
+a:hover { color:#7aebd6; }
+header, main, footer { max-width:720px; margin:0 auto; padding:1.3rem 1.1rem; }
+header {
+  border:1px solid var(--line); border-radius:14px;
+  background:linear-gradient(120deg, rgba(62,207,180,.08), rgba(240,180,41,.05));
+}
+.brand {
+  display:inline-block; font-size:.75rem; letter-spacing:.05em;
+  color:var(--accent2); background:var(--chip); border:1px solid var(--line);
+  padding:.2rem .55rem; border-radius:999px; margin-bottom:.5rem;
+}
+h1 { font-size:1.38rem; margin:.2rem 0 .35rem; line-height:1.4; }
+.lead { margin:0; color:var(--muted); font-size:.95rem; }
+.meta { color:var(--muted); font-size:.88rem; margin-top:.55rem; }
+article h2 {
+  font-size:1.1rem; margin-top:1.65rem; color:var(--accent);
+  border-bottom:2px solid var(--line); padding-bottom:.3rem;
+}
+.term {
+  background:var(--card); border:1px solid var(--line); border-radius:12px;
+  padding:.95rem 1.05rem; margin:.85rem 0;
+}
+.term dt { font-weight:700; color:var(--accent2); margin-bottom:.25rem; }
+.term dd { margin:0; color:var(--text); }
+.callout {
+  border-left:4px solid var(--accent); background:rgba(62,207,180,.07);
+  padding:.85rem 1rem; margin:1.1rem 0; border-radius:0 10px 10px 0;
+}
+.links { margin:1.35rem 0; }
+.disclosure { font-size:.9rem; color:var(--muted); margin-top:1.4rem; }
+footer { border-top:1px solid var(--line); color:var(--muted); font-size:.88rem; margin-top:1.8rem; }
+ul { padding-left:1.25rem; }
+</style>
+</head>
+<body>
+<header>
+<span class="brand">Boss Lab Studio · Glossary</span>
+<h1>Arena用語集：非同期PvPで使う言葉を整理</h1>
+<p class="lead">Boss LabのArenaは、相手を待たない非同期PvPです。ここでは公開・防衛・リプレイなど、画面とガイドで出てくる言葉を事実ベースでまとめます。</p>
+<p class="meta"><a href="index.html">目次へ</a> · Android専用 · 接続必須 · 60+パーツ</p>
+</header>
+<main>
+<article>
+<p>Boss Lab: Robot Battle Builder は、Boss Lab Studioが開発した2026年のAndroid向けロボット組み立てオートバトラーです。60+のパーツと3つのAIブレイン（Hunter / Counterstrike / Berserker）でボスを組み、サイドビューの自動戦闘を見ます。キャンペーンは100ボス・20地区。Arenaは非同期で、公開したボスに他プレイヤーのボスが攻撃します。本作はレベルエディタではなく、UGCツールもなく、リアルタイム操作のシューターでもありません。無料プレイでアプリ内課金があり、プレイには接続が必要です。アート／音声はAI支援、設計・コード・バランスはチームが担当しています。</p>
+
+<div class="callout">最初の答え：Arenaは「今すぐ対戦相手を待つモード」ではなく、公開したボスがオフライン中でも他プレイヤーのボスと戦う非同期PvPです。詳しくは公式の <a href="https://www.bosslab.xyz/blog/arena-guide?utm_source=github_pages&amp;utm_campaign=sprint_ja-arena-glossary">Arenaガイド</a> も参照してください。</div>
+
+<h2>基本用語</h2>
+<div class="term"><dl>
+<dt>Arena（アリーナ）</dt>
+<dd>非同期PvPモードの総称。ライブマッチメイキングではなく、公開ボス同士の戦闘が中心です。</dd>
+</dl></div>
+<div class="term"><dl>
+<dt>Publish / 公開</dt>
+<dd>自分のボスをArenaに出す操作。公開後、他プレイヤーのボスがあなたのボスと戦えます。あなたがオフラインでも戦闘は進みます。</dd>
+</dl></div>
+<div class="term"><dl>
+<dt>Defense / 防衛構成</dt>
+<dd>公開側として「攻められる側」のビルド。攻めるときと同じパーツとブレインを使いますが、目的は「侵入してきた相手に勝ち残ること」です。</dd>
+</dl></div>
+<div class="term"><dl>
+<dt>Attack / 攻撃側</dt>
+<dd>他プレイヤーの公開ボスに挑む側。短時間のセッション向きで、相手のログインを待つ必要はありません。</dd>
+</dl></div>
+
+<h2>戦闘まわりの言葉</h2>
+<div class="term"><dl>
+<dt>Auto-battle / 自動戦闘</dt>
+<dd>戦闘中に手動でエイムや射撃はしません。戦略は戦闘前のパーツ選択とAIブレインにあります。</dd>
+</dl></div>
+<div class="term"><dl>
+<dt>AI brain / AIブレイン</dt>
+<dd>Hunter（追う）、Counterstrike（反応・反撃）、Berserker（被ダメージで攻撃性が上がる）の3種。Arenaでも同じ3種です。</dd>
+</dl></div>
+<div class="term"><dl>
+<dt>Replay / リプレイ</dt>
+<dd>戦闘の記録を見返す機能。負けた理由をパーツ配置やブレインの動きから読み取るための材料です。詳細は公式のリプレイガイドを参照。</dd>
+</dl></div>
+<div class="term"><dl>
+<dt>Normalization（正規化）</dt>
+<dd>Arena向けのバランス調整の考え方。詳細な数値はゲーム内と公式ガイドに従い、ここでは「無制限の積み上げだけが勝つ設計ではない」程度に留めて理解してください。</dd>
+</dl></div>
+
+<h2>混同しやすいポイント</h2>
+<ul>
+<li><strong>オフライン完結ではありません。</strong>Arenaと進行には接続が必要です。「相手がオフラインでも戦う」ことと「自分がオフライン専用で遊べる」ことは別です。</li>
+<li><strong>War Robots系のリアルタイム操縦ではありません。</strong>似て聞こえるメカ対戦でも、Boss Labは組み立て→自動戦闘です。</li>
+<li><strong>レベルエディタではありません。</strong>作るのはロボットボスであり、ステージやマップのUGCではありません。</li>
+<li><strong>パーツは60+。</strong>ボディ・武器・機動・サポートに分かれます。センサー専用カテゴリなどの未確認分類は使いません。</li>
+</ul>
+
+<h2>用語を覚える順番（おすすめ）</h2>
+<ol>
+<li>公開と防衛の違いを理解する</li>
+<li>3ブレインの役割を一つずつ試す</li>
+<li>負けた試合のリプレイで「距離・火力・耐久のどれが崩れたか」を見る</li>
+<li>キャンペーン用ビルドとArena用ビルドを分けて考える（必要なら公式の campaign-vs-arena も）</li>
+</ol>
+
+
+<h2>キャンペーン用語との違い</h2>
+<p>キャンペーンは100ボス・20地区の進行です。地区を進むほど新しいパーツや要求が現れますが、Arenaの公開・防衛とは目的が違います。キャンペーンで強いビルドが、そのまま防衛向きとは限りません。公式の campaign-vs-arena ガイドも、用語を混線させない助けになります。</p>
+<p>「スター評価」「行き詰まりボス」「アンロック優先」などはキャンペーン側の言葉です。Arena用語集では、公開・攻撃・防衛・リプレイ・正規化を優先して覚え、キャンペーン用語は別ノートに分けると迷いにくくなります。</p>
+
+<h2>開発者としての注意書き</h2>
+<p>私たちは独立チーム Boss Lab Studio です。比較対象として CATS、Robotics!、Super Mechs、Gladiabots などが挙がることがありますが、それぞれシステムが違います。特に War Robots / Mech Arena 系のリアルタイム操縦と混同されないよう、用語でも「自動戦闘」「ビルド戦略」を繰り返し使っています。</p>
+
+<p class="links">
+公式サイト / Arenaガイド: <a href="https://www.bosslab.xyz/blog/arena-guide?utm_source=github_pages&amp;utm_campaign=sprint_ja-arena-glossary">bosslab.xyz/blog/arena-guide</a><br>
+Google Play: <a href="https://play.google.com/store/apps/details?id=com.bosslab.game&amp;utm_source=github_pages&amp;utm_campaign=sprint_ja-arena-glossary">Boss Lab をインストール</a>
+</p>
+<p class="disclosure">本記事は開発者 Boss Lab Studio が執筆しています。アート／音声はAI支援、ゲームデザイン・コード・バランスはチームが担当。Android専用・接続必須・アプリ内課金あり。レベルエディタ／UGCツールはありません。</p>
+</article>
+</main>
+<footer>
+<p><a href="index.html">Guides 2 目次</a> · Phaser · 2026 · com.bosslab.game</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Một robot, nhiều vai trò — tư duy dựng build Boss Lab như đội hình</title>
+<meta name="description" content="Cách nghĩ một robot Boss Lab đảm nhiệm nhiều vai trò. Android, 60+ parts, Arena bất đồng bộ, cần kết nối.">
+<style>
+:root {
+  --bg:#0c1222; --card:#151d33; --text:#edf2ff; --muted:#9aa8c7;
+  --accent:#a78bfa; --accent2:#34d399; --line:#273352; --chip:#1c2744;
+}
+* { box-sizing:border-box; }
+body {
+  margin:0; font-family:"Segoe UI",Roboto,"Noto Sans",system-ui,sans-serif;
+  background:
+    radial-gradient(700px 360px at 0% 0%, rgba(167,139,250,.16), transparent 55%),
+    radial-gradient(600px 320px at 100% 0%, rgba(52,211,153,.10), transparent 50%),
+    var(--bg);
+  color:var(--text); line-height:1.75;
+}
+a { color:var(--accent2); }
+a:hover { color:#6ee7b7; }
+header, main, footer { max-width:720px; margin:0 auto; padding:1.3rem 1.1rem; }
+header {
+  background:linear-gradient(145deg, rgba(167,139,250,.12), rgba(52,211,153,.06));
+  border:1px solid var(--line); border-radius:18px;
+}
+.brand {
+  display:inline-block; font-size:.75rem; letter-spacing:.04em; text-transform:uppercase;
+  color:var(--accent); background:var(--chip); border:1px solid var(--line);
+  padding:.2rem .55rem; border-radius:999px; margin-bottom:.5rem;
+}
+h1 { font-size:1.34rem; margin:.15rem 0 .35rem; line-height:1.4; }
+.lead { margin:0; color:var(--muted); }
+.meta { color:var(--muted); font-size:.88rem; margin-top:.5rem; }
+article h2 {
+  font-size:1.08rem; margin-top:1.55rem; color:var(--accent);
+}
+.role {
+  display:grid; gap:.55rem; margin:1rem 0;
+}
+.role > div {
+  background:var(--card); border:1px solid var(--line); border-radius:12px;
+  padding:.85rem 1rem; border-left:4px solid var(--accent2);
+}
+.role b { color:var(--accent2); }
+.callout {
+  background:rgba(167,139,250,.08); border:1px solid rgba(167,139,250,.35);
+  border-radius:12px; padding:.9rem 1rem; margin:1.1rem 0;
+}
+.links { margin:1.35rem 0; }
+.disclosure { font-size:.9rem; color:var(--muted); margin-top:1.4rem; }
+footer { border-top:1px solid var(--line); color:var(--muted); font-size:.88rem; margin-top:1.8rem; }
+</style>
+</head>
+<body>
+<header>
+<span class="brand">Boss Lab Studio · Build thinking</span>
+<h1>Một robot, nhiều vai trò</h1>
+<p class="lead">Boss Lab không phải game xếp đội 5 người. Bạn chỉ có một robot boss — nhưng vẫn có thể tư duy “vai trò” như đang ghép đội hình.</p>
+<p class="meta"><a href="index.html">Mục lục</a> · Chỉ Android · Cần kết nối · 60+ parts</p>
+</header>
+<main>
+<article>
+<p>Boss Lab: Robot Battle Builder là game Android 2026 của Boss Lab Studio. Bạn lắp một robot boss từ 60+ parts (thân, vũ khí, cơ động, hỗ trợ), gắn Hunter / Counterstrike / Berserker, rồi xem auto-battle góc cạnh bên. Chiến dịch: 100 boss · 20 khu. Arena: PvP bất đồng bộ. Không phải level editor, không UGC, không phải shooter điều khiển real-time. Miễn phí kèm IAP, cần kết nối. Art/audio hỗ trợ AI; thiết kế, code và cân bằng do team.</p>
+
+<div class="callout">Vì combat tự động, “vai trò” nằm ở parts + brain trước trận — không phải nút trong trận. Xem <a href="https://www.bosslab.xyz/blog/first-boss-build?utm_source=github_pages&amp;utm_campaign=sprint_vi-one-robot-many-roles">first-boss-build</a>.</div>
+
+<h2>Bốn “ghế” trên cùng một robot</h2>
+<div class="role">
+<div><b>Thân (body)</b> — chịu đòn / khung khi khoảng cách xấu.</div>
+<div><b>Vũ khí (weapons)</b> — gây sát thương; cận/xa khớp nhịp di chuyển.</div>
+<div><b>Cơ động (mobility)</b> — khoảng cách: đưa vũ khí vào tầm, thoát tầm nguy.</div>
+<div><b>Hỗ trợ (support)</b> — ghế ổn định nhịp (repair/khiên/năng lượng tùy part mở khóa). Không bịa thêm hạng mục “sensor” ngoài thông tin đã công bố.</div>
+</div>
+
+<h2>Brain = huấn luyện viên, không phải nút skill</h2>
+<ul>
+<li><strong>Hunter</strong> — truy đuổi; ép khoảng cách.</li>
+<li><strong>Counterstrike</strong> — phản ứng/phản đòn.</li>
+<li><strong>Berserker</strong> — càng bị đánh càng hung; đổi máu lấy áp cuối trận.</li>
+</ul>
+<p>Giữ parts, chỉ đổi brain — đối chứng sạch nhất.</p>
+
+<h2>Ví dụ tư duy (không phải meta tuyệt đối)</h2>
+<ol>
+<li><strong>“Ép góc”</strong>: vũ khí cận + mobility vào mặt + Hunter.</li>
+<li><strong>“Giữ khoảng”</strong>: vũ khí tầm xa + mobility tạo khoảng + support ổn định.</li>
+<li><strong>“Lật kèo”</strong>: body sống đầu trận + Berserker khi máu xuống.</li>
+</ol>
+<p>Chỉ là khung thử nghiệm, không phải lời hứa thắng.</p>
+
+<h2>Những điều cần tránh</h2>
+<ul>
+<li>Gán nhiều vai trò mâu thuẫn mà không chọn ưu tiên.</li>
+<li>Coi Boss Lab như map editor / UGC.</li>
+<li>Coi “đối thủ offline vẫn bị đánh” thành “bạn chơi offline hoàn toàn” — bạn vẫn cần kết nối.</li>
+<li>So trực tiếp với War Robots (điều khiển real-time) — thể loại khác.</li>
+</ul>
+
+<p class="links">
+Hướng dẫn boss đầu tiên: <a href="https://www.bosslab.xyz/blog/first-boss-build?utm_source=github_pages&amp;utm_campaign=sprint_vi-one-robot-many-roles">bosslab.xyz/blog/first-boss-build</a><br>
+Google Play: <a href="https://play.google.com/store/apps/details?id=com.bosslab.game&amp;utm_source=github_pages&amp;utm_campaign=sprint_vi-one-robot-many-roles">Cài Boss Lab</a>
+</p>
+<p class="disclosure">Viết bởi nhà phát triển Boss Lab Studio. Art/audio hỗ trợ AI; thiết kế, code, cân bằng do team. Chỉ Android, cần kết nối, có IAP. Không phải level editor, không UGC.</p>
+</article>
+</main>
+<footer>
+<p><a href="index.html">Mục lục Guides 2</a> · Phaser · 2026 · com.bosslab.game</p>
+</footer>
+</body>
+</html>

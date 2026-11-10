@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>哪些调整真正提高了胜率——Boss Lab 开发者的诚实笔记</title>
+<meta name="description" content="Boss Lab 开发者分享真正影响胜率的调整：零件协同、AI 大脑与回放。Android 专属，60+零件，异步 Arena。">
+<style>
+:root {
+  --bg:#1b1410; --card:#2a2018; --text:#f6ebe0; --muted:#b39a86;
+  --accent:#ff8a4c; --accent2:#ffd166; --line:#3d2f24; --chip:#33261c;
+}
+* { box-sizing:border-box; }
+body {
+  margin:0; font-family:"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  background:
+    radial-gradient(800px 400px at 100% 0%, rgba(255,138,76,.14), transparent 55%),
+    var(--bg);
+  color:var(--text); line-height:1.85;
+}
+a { color:var(--accent); }
+a:hover { color:var(--accent2); }
+header, main, footer { max-width:720px; margin:0 auto; padding:1.3rem 1.1rem; }
+header {
+  border-radius:4px 18px 18px 4px; border-left:5px solid var(--accent);
+  background:var(--card); border-top:1px solid var(--line); border-right:1px solid var(--line); border-bottom:1px solid var(--line);
+  padding:1.2rem 1.15rem;
+}
+.brand {
+  display:inline-block; font-size:.75rem; color:var(--accent2); background:var(--chip);
+  padding:.18rem .5rem; border-radius:4px; margin-bottom:.45rem;
+}
+h1 { font-size:1.34rem; margin:.15rem 0 .35rem; line-height:1.4; }
+.lead { margin:0; color:var(--muted); }
+.meta { color:var(--muted); font-size:.88rem; margin-top:.5rem; }
+article h2 {
+  font-size:1.08rem; margin-top:1.55rem; color:var(--accent2);
+  border-bottom:1px solid var(--line); padding-bottom:.28rem;
+}
+.tip {
+  background:var(--card); border:1px dashed var(--line); border-radius:10px;
+  padding:.9rem 1rem; margin:.8rem 0;
+}
+.tip strong { color:var(--accent); }
+.bad {
+  background:rgba(255,80,80,.08); border:1px solid rgba(255,80,80,.25);
+  border-radius:10px; padding:.85rem 1rem; margin:1rem 0;
+}
+.links { margin:1.35rem 0; }
+.disclosure { font-size:.9rem; color:var(--muted); margin-top:1.4rem; }
+footer { border-top:1px solid var(--line); color:var(--muted); font-size:.88rem; margin-top:1.8rem; }
+</style>
+</head>
+<body>
+<header>
+<span class="brand">Boss Lab Studio · 开发笔记</span>
+<h1>哪些调整真正提高了胜率</h1>
+<p class="lead">这不是“必胜秘籍”，而是我们在打磨 Boss Lab 时反复验证过的诚实观察：改什么有用，改什么大多是噪音。</p>
+<p class="meta"><a href="index.html">目录</a> · 仅 Android · 需要联网 · 60+ 零件</p>
+</header>
+<main>
+<article>
+<p>Boss Lab: Robot Battle Builder 是 Boss Lab Studio 于 2026 年推出的 Android 机器人组装自动战斗游戏。你从 60+ 零件（机体、武器、机动、支援）组装一只机器人首领，选择 Hunter、Counterstrike 或 Berserker 三种 AI 大脑之一，然后观看侧视自动战斗。战役含 100 个首领、20 个区域；Arena 是异步 PvP——即使你离线，其他玩家的首领也会挑战你已发布的首领。它不是关卡编辑器，没有 UGC 工具，也不是需实时操控的射击游戏。免费游玩，含应用内购，需要联网。美术/音频为 AI 辅助，设计、代码与数值由团队完成。</p>
+
+<p>先说结论：对我们自己和内测里最稳定提升“感觉上的胜率”的，通常不是一口气换满全身，而是<strong>一次只改一个杠杆</strong>——零件协同、大脑选择、或回放里确认的一个弱点。</p>
+
+<h2>有效调整 1：先修“协同”，再追稀有感</h2>
+<div class="tip">
+<strong>观察：</strong>把武器、机体、机动和支援当成同一句话的四个词，而不是四个独立收藏柜。火力够远但走位贴脸、或近战套装却配了爱追击的错误节奏，都会在自动战斗里自我拆台。官方有 <a href="https://www.bosslab.xyz/blog/synergy-guide?utm_source=github_pages&amp;utm_campaign=sprint_zh-cn-winrate-tips">协同指南</a>，建议与回放一起看。
+</div>
+
+<h2>有效调整 2：大脑换一次，比零件换五次更清晰</h2>
+<div class="tip">
+<strong>观察：</strong>Hunter 更倾向追击；Counterstrike 更偏反应/反击；Berserker 随受伤提高攻击性。很多“零件不行”的体感，其实是大脑与射程角色不匹配。保留零件、只换大脑，是最干净的对照实验。
+</div>
+
+<h2>有效调整 3：用回放回答一个问题</h2>
+<div class="tip">
+<strong>观察：</strong>问自己：我是死在“打不到对方之前”，还是“打得到却扛不住”？前者优先机动/射程角色，后者优先机体与支援节奏。不要一次改四个槽位，否则你不知道哪一刀生效。
+</div>
+
+<h2>有效调整 4：战役与 Arena 分开记账</h2>
+<div class="tip">
+<strong>观察：</strong>战役 100 首领有教学与推进节奏；Arena 是异步发布与防守。同一套零件在两边体感不同是正常的。不要用战役通关率直接等同 Arena 胜率。
+</div>
+
+<h2>我们很少看到长期效果的做法</h2>
+<div class="bad">
+<ul>
+<li>把失败全部归因于“手速”——战斗是自动的，策略在战前。</li>
+<li>假设存在未经验证的“传感器神装分类”——我们公开的大类是机体、武器、机动、支援，合计 60+ 零件。</li>
+<li>以为离线就能完整游玩——Arena 描述的是对手离线时仍可被挑战；你自己游玩需要联网。</li>
+<li>把 Boss Lab 当成关卡工坊或 UGC 平台——你组装的是首领，不是地图。</li>
+</ul>
+</div>
+
+
+<h2>有效调整 5：短会话里只做一个实验</h2>
+<div class="tip">
+<strong>观察：</strong>异步 Arena 适合碎片时间。一次登录只做一个实验——换大脑，或换一个支援槽，或只看一场回放的四个检查点。带回三个半成品改动，通常不如带回一个可复现的结论。
+</div>
+
+<h2>给理论党的最小清单</h2>
+<ul>
+<li>零件大类：机体、武器、机动、支援（合计 60+）</li>
+<li>大脑三选一：Hunter / Counterstrike / Berserker</li>
+<li>模式两本账：战役 100 首领 / 20 区域，与异步 Arena</li>
+<li>硬边界：仅 Android、需联网、有内购、非关卡编辑器、无 UGC</li>
+</ul>
+<p>引擎是 Phaser；发行于 2026。预告片在官方 YouTube，站点与指南在 bosslab.xyz。把胜率讨论钉在这些事实上，比追未验证流言更省时间。</p>
+
+<h2>诚实边界</h2>
+<p>游戏含应用内购。我们不会在这里承诺“不氪一定最强”。请以 Google Play 近期评价与你自己的体验为准。我们也明确：本作仅 Android，没有 iOS 版。</p>
+
+<p class="links">
+协同指南 / 官网: <a href="https://www.bosslab.xyz/blog/synergy-guide?utm_source=github_pages&amp;utm_campaign=sprint_zh-cn-winrate-tips">bosslab.xyz/blog/synergy-guide</a><br>
+Google Play: <a href="https://play.google.com/store/apps/details?id=com.bosslab.game&amp;utm_source=github_pages&amp;utm_campaign=sprint_zh-cn-winrate-tips">下载 Boss Lab</a>
+</p>
+<p class="disclosure">本文由开发者 Boss Lab Studio 撰写。美术/音频为 AI 辅助；设计、代码、数值由团队负责。仅 Android，需要联网，含内购。非关卡编辑器，无 UGC 工具。</p>
+</article>
+</main>
+<footer>
+<p><a href="index.html">Guides 2 目录</a> · Phaser · 2026 · com.bosslab.game</p>
+</footer>
+</body>
+</html>

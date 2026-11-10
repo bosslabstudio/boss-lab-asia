@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>리플레이로 읽는 패배 원인 — Boss Lab 리플레이 가이드</title>
+<meta name="description" content="Boss Lab 리플레이로 패배 원인을 읽는 법. Android 전용, 60+ 파츠, 비동기 Arena, 연결 필요.">
+<style>
+:root {
+  --bg:#f4f7fb; --card:#ffffff; --text:#1a2433; --muted:#5d6b7c;
+  --accent:#2563eb; --accent2:#db2777; --line:#d7e0ec; --chip:#e8eef8;
+}
+* { box-sizing:border-box; }
+body {
+  margin:0; font-family:"Apple SD Gothic Neo","Noto Sans KR","Segoe UI",Roboto,sans-serif;
+  background:
+    linear-gradient(180deg, #eaf1ff 0%, var(--bg) 28%, #f7f9fc 100%);
+  color:var(--text); line-height:1.8;
+}
+a { color:var(--accent); }
+a:hover { color:var(--accent2); }
+header, main, footer { max-width:720px; margin:0 auto; padding:1.3rem 1.1rem; }
+header {
+  background:var(--card); border:1px solid var(--line); border-radius:16px;
+  box-shadow:0 8px 24px rgba(37,99,235,.06);
+}
+.brand {
+  display:inline-block; font-size:.75rem; color:var(--accent2); background:var(--chip);
+  padding:.2rem .55rem; border-radius:999px; margin-bottom:.5rem; border:1px solid var(--line);
+}
+h1 { font-size:1.36rem; margin:.15rem 0 .35rem; line-height:1.4; }
+.lead { margin:0; color:var(--muted); }
+.meta { color:var(--muted); font-size:.88rem; margin-top:.5rem; }
+article h2 {
+  font-size:1.08rem; margin-top:1.6rem; color:var(--accent);
+  background:linear-gradient(90deg, var(--chip), transparent); padding:.35rem .55rem; border-radius:8px;
+}
+.step {
+  background:var(--card); border:1px solid var(--line); border-radius:12px;
+  padding:.9rem 1rem; margin:.75rem 0; border-top:3px solid var(--accent);
+}
+.check { list-style:none; padding:0; }
+.check li {
+  margin:.45rem 0; padding:.55rem .75rem; background:var(--chip); border-radius:8px;
+}
+.callout {
+  background:#fff1f7; border:1px solid #f9c2d6; border-radius:12px;
+  padding:.9rem 1rem; margin:1.1rem 0;
+}
+.links { margin:1.35rem 0; }
+.disclosure { font-size:.9rem; color:var(--muted); margin-top:1.4rem; }
+footer { border-top:1px solid var(--line); color:var(--muted); font-size:.88rem; margin-top:1.8rem; }
+</style>
+</head>
+<body>
+<header>
+<span class="brand">Boss Lab Studio · Replay</span>
+<h1>리플레이로 읽는 패배 원인</h1>
+<p class="lead">전투는 자동입니다. 그래서 “손이 느려서”가 아니라, 파츠와 AI 브레인이 만든 패턴을 리플레이로 읽는 연습이 중요합니다.</p>
+<p class="meta"><a href="index.html">목차</a> · Android 전용 · 연결 필요 · 60+ 파츠</p>
+</header>
+<main>
+<article>
+<p>Boss Lab: Robot Battle Builder는 Boss Lab Studio가 만든 2026 Android 로봇 조립 오토배틀러입니다. 60+ 파츠(바디·무기·기동·서포트)로 보스를 조립하고 Hunter / Counterstrike / Berserker 중 하나의 AI 브레인을 붙인 뒤, 사이드 뷰 자동 전투를 지켜봅니다. 캠페인은 100보스·20구역, Arena는 비동기 PvP입니다. 레벨 에디터가 아니고 UGC 도구도 없으며, War Robots처럼 실시간으로 조종하는 슈터가 아닙니다. 무료이며 인앱 결제가 있고, 플레이에는 연결이 필요합니다. 아트/오디오는 AI 지원, 디자인·코드·밸런스는 팀이 담당합니다.</p>
+
+<div class="callout">한 줄 요약: 리플레이는 “화려한 하이라이트”가 아니라, 거리·화력·내구·브레인 반응이 어디서 무너졌는지 확인하는 점검표입니다. 공식 <a href="https://www.bosslab.xyz/blog/replay-guide?utm_source=github_pages&amp;utm_campaign=sprint_ko-replay-reading">리플레이 가이드</a>와 함께 보세요.</div>
+
+<h2>리플레이를 보기 전에 적어두기</h2>
+<div class="step">
+<p>패배 직후 기억에 의존하지 말고, 다음만 메모하세요.</p>
+<ul class="check">
+<li>상대가 먼저 접근했는가, 내가 먼저 붙었는가</li>
+<li>내 화력이 “닿기 전”에 죽었는가, “닿은 뒤”에 졌는가</li>
+<li>사용 중인 AI 브레인 이름 (Hunter / Counterstrike / Berserker)</li>
+<li>바디·무기·기동·서포트 중 가장 늦게 바꾼 슬롯</li>
+</ul>
+</div>
+
+<h2>리플레이에서 볼 네 장면</h2>
+<div class="step">
+<strong>1) 개전 3초</strong>
+<p>첫 이동 방향과 사거리 관계가 보입니다. Hunter는 추격을 좋아하는 편이라, 원거리 상대에게 무리하게 붙는지 확인하세요.</p>
+</div>
+<div class="step">
+<strong>2) 첫 큰 피해</strong>
+<p>한 방에 무너졌다면 바디/방어 쪽 우선순위를 다시 봅니다. 천천히 깎였다면 지속 화력·거리 유지 문제일 수 있습니다.</p>
+</div>
+<div class="step">
+<strong>3) 중반 전환</strong>
+<p>Berserker는 피해를 받을수록 공격성이 올라갑니다. “늦게 강해지는데 너무 일찍 녹는” 패턴이면, 초반 생존을 먼저 보강하세요.</p>
+</div>
+<div class="step">
+<strong>4) 막타 직전</strong>
+<p>이기기 직전 자폭하듯 무너지면, 기동(거리 조절)이나 Counterstrike 반응 타이밍과 무기 역할이 어긋난 경우가 많습니다.</p>
+</div>
+
+<h2>흔한 오해</h2>
+<ul>
+<li>리플레이는 “조작 미숙”을 탓하는 도구가 아닙니다. 전투는 자동입니다.</li>
+<li>한 번의 패배로 60+ 파츠 전체를 갈아엎을 필요는 없습니다. 슬롯 하나·브레인 하나만 바꿔도 충분합니다.</li>
+<li>Arena에서 상대가 오프라인이어도 전투는 진행됩니다. 하지만 당신이 오프라인 전용으로 플레이할 수 있다는 뜻은 아닙니다. 연결이 필요합니다.</li>
+<li>Boss Lab은 레벨을 만드는 게임이 아닙니다. 리플레이로 보는 것도 보스 전투이지 맵 에디터가 아닙니다.</li>
+</ul>
+
+<h2>실전 루틴 (5분)</h2>
+<ol>
+<li>패배한 Arena 또는 캠페인 한 판의 리플레이를 연다</li>
+<li>위 네 장면만 체크한다</li>
+<li>파츠 하나 또는 브레인 하나만 바꾼다</li>
+<li>같은 상대/비슷한 구간을 한 번 더 시험한다</li>
+</ol>
+
+<p>이 루틴은 짧은 세션에도 맞습니다. 비동기 Arena라서 실시간 상대를 기다릴 필요가 없습니다.</p>
+
+<p class="links">
+공식 리플레이 가이드: <a href="https://www.bosslab.xyz/blog/replay-guide?utm_source=github_pages&amp;utm_campaign=sprint_ko-replay-reading">bosslab.xyz/blog/replay-guide</a><br>
+Google Play: <a href="https://play.google.com/store/apps/details?id=com.bosslab.game&amp;utm_source=github_pages&amp;utm_campaign=sprint_ko-replay-reading">Boss Lab 설치</a>
+</p>
+<p class="disclosure">개발자 Boss Lab Studio가 작성했습니다. 아트/오디오 AI 지원, 디자인·코드·밸런스는 팀 담당. Android 전용, 연결 필요, 인앱 결제 있음. 레벨 에디터/UGC 없음.</p>
+</article>
+</main>
+<footer>
+<p><a href="index.html">Guides 2 목차</a> · Phaser · 2026 · com.bosslab.game</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modul support Boss Lab: kapan dipasang dan apa yang mereka lakukan</title>
+<meta name="description" content="Panduan modul support di Boss Lab: kapan dipasang. Android saja, 60+ parts, Arena async, perlu koneksi.">
+<style>
+:root {
+  --bg:#f3faf7; --card:#ffffff; --text:#10231c; --muted:#4d6a5d;
+  --accent:#047857; --accent2:#c2410c; --line:#cfe5d9; --chip:#e5f6ee;
+}
+* { box-sizing:border-box; }
+body {
+  margin:0; font-family:"Segoe UI",Roboto,"Noto Sans",system-ui,sans-serif;
+  background:
+    radial-gradient(ellipse at top, #d9f5e8 0%, transparent 45%),
+    var(--bg);
+  color:var(--text); line-height:1.75;
+}
+a { color:var(--accent); }
+a:hover { color:var(--accent2); }
+header, main, footer { max-width:720px; margin:0 auto; padding:1.3rem 1.1rem; }
+header {
+  background:var(--card); border:2px solid var(--accent); border-radius:12px;
+  padding:1.2rem 1.15rem;
+}
+.brand {
+  display:inline-block; font-size:.75rem; color:var(--accent); background:var(--chip);
+  padding:.2rem .55rem; border-radius:6px; margin-bottom:.45rem; font-weight:600;
+}
+h1 { font-size:1.34rem; margin:.15rem 0 .35rem; line-height:1.4; }
+.lead { margin:0; color:var(--muted); }
+.meta { color:var(--muted); font-size:.88rem; margin-top:.5rem; }
+article h2 {
+  font-size:1.08rem; margin-top:1.55rem; color:var(--accent);
+  border-left:5px solid var(--accent2); padding-left:.55rem;
+}
+.box {
+  background:var(--card); border:1px solid var(--line); border-radius:10px;
+  padding:.9rem 1rem; margin:.8rem 0;
+}
+table { width:100%; border-collapse:collapse; font-size:.94rem; background:var(--card); margin:1rem 0; }
+th, td { border:1px solid var(--line); padding:.5rem .6rem; text-align:left; vertical-align:top; }
+th { background:var(--chip); color:var(--accent); }
+.links { margin:1.35rem 0; }
+.disclosure { font-size:.9rem; color:var(--muted); margin-top:1.4rem; }
+footer { border-top:1px solid var(--line); color:var(--muted); font-size:.88rem; margin-top:1.8rem; }
+</style>
+</head>
+<body>
+<header>
+<span class="brand">Boss Lab Studio · Parts</span>
+<h1>Modul support: kapan dipasang?</h1>
+<p class="lead">Di antara 60+ parts Boss Lab, modul support sering diabaikan demi senjata baru. Padahal di auto-battle, support adalah “asisten yang bekerja tanpa tombol”.</p>
+<p class="meta"><a href="index.html">Daftar isi</a> · Android saja · Perlu koneksi · 60+ parts</p>
+</header>
+<main>
+<article>
+<p>Boss Lab: Robot Battle Builder adalah game Android 2026 dari Boss Lab Studio. Anda merakit robot boss dari 60+ parts — body, weapons, mobility, dan support modules — lalu memasang salah satu dari tiga AI brain: Hunter, Counterstrike, atau Berserker, kemudian menonton pertarungan otomatis sisi samping. Kampanye berisi 100 boss di 20 distrik; Arena adalah PvP asinkron. Bukan level editor, tanpa alat UGC, dan bukan shooter kendali real-time. Gratis dengan pembelian dalam aplikasi, dan membutuhkan koneksi. Art/audio dibantu AI; desain, kode, dan balancing oleh tim.</p>
+
+<div class="box">
+<strong>Jawaban singkat:</strong> pasang support ketika build Anda sudah punya arah kerusakan dan jarak, tetapi kalah karena “tempo” — terlalu cepat hancur, terlalu mudah ditekan panas/energi, atau butuh jaring pengaman. Contoh resmi terkait: <a href="https://www.bosslab.xyz/blog/repair-drone-guide?utm_source=github_pages&amp;utm_campaign=sprint_id-support-modules">panduan repair drone</a>.
+</div>
+
+<h2>Di mana support berdiri di antara kategori</h2>
+<table>
+<thead><tr><th>Kategori</th><th>Pertanyaan yang dijawab</th></tr></thead>
+<tbody>
+<tr><td>Body</td><td>Berapa lama saya bertahan?</td></tr>
+<tr><td>Weapons</td><td>Bagaimana saya mengakhiri lawan?</td></tr>
+<tr><td>Mobility</td><td>Di jarak mana senjata saya relevan?</td></tr>
+<tr><td>Support</td><td>Bagaimana saya menjaga tempo agar tiga jawaban di atas sempat bekerja?</td></tr>
+</tbody>
+</table>
+<p>Kami tidak mengklaim kategori “sensor” terpisah di luar fakta publik. Tetap pada body / weapons / mobility / support.</p>
+
+<h2>Tanda Anda mungkin butuh support (bukan senjata baru)</h2>
+<ul>
+<li>Replay menunjukkan Anda sempat unggul damage lalu tiba-tiba ambruk.</li>
+<li>Hunter Anda berhasil mendekat tetapi tidak hidup cukup lama untuk menyelesaikan.</li>
+<li>Berserker Anda “baru marah” ketika HP sudah terlalu tipis.</li>
+<li>Counterstrike tampak bereaksi, tetapi Anda tidak punya ruang pulih setelah saling pukul.</li>
+</ul>
+
+<h2>Cara menguji support dengan bersih</h2>
+<ol>
+<li>Kunci body + weapons + mobility + brain.</li>
+<li>Ganti hanya slot support (atau kosongkan vs isi).</li>
+<li>Ulangi lawan/kampanye segmen yang sama.</li>
+<li>Catat: apakah waktu hidup naik, atau kerusakan total naik, atau keduanya.</li>
+</ol>
+<p>Satu variabel = kesimpulan yang bisa dipercaya. Mengganti lima parts sekaligus membuat “dukungan” mustahil diukur.</p>
+
+<h2>Support di kampanye vs Arena</h2>
+<p>Kampanye 100 boss punya progresi buka-part. Arena asinkron menguji build yang Anda publish saat Anda offline dari sisi lawan — tetapi Anda sendiri tetap perlu koneksi untuk bermain. Jangan samakan “lawan offline bisa menyerang boss Anda” dengan “mode offline penuh”.</p>
+
+<h2>Batas klaim yang kami patuhi</h2>
+<ul>
+<li>Bukan level editor / tanpa UGC.</li>
+<li>Android saja; tidak ada iOS.</li>
+<li>Ada IAP; kami tidak menjual jaminan kemenangan lewat artikel ini.</li>
+<li>Perbandingan kasar boleh ke CATS / Robotics! / Super Mechs; jangan disamakan dengan War Robots yang dikendalikan real-time.</li>
+</ul>
+
+<p class="links">
+Panduan repair drone: <a href="https://www.bosslab.xyz/blog/repair-drone-guide?utm_source=github_pages&amp;utm_campaign=sprint_id-support-modules">bosslab.xyz/blog/repair-drone-guide</a><br>
+Google Play: <a href="https://play.google.com/store/apps/details?id=com.bosslab.game&amp;utm_source=github_pages&amp;utm_campaign=sprint_id-support-modules">Pasang Boss Lab</a>
+</p>
+<p class="disclosure">Ditulis oleh pengembang Boss Lab Studio. Art/audio dibantu AI; desain, kode, balancing oleh tim. Android saja, perlu koneksi, ada IAP. Bukan level editor, tanpa UGC.</p>
+</article>
+</main>
+<footer>
+<p><a href="index.html">Daftar isi Guides 2</a> · Phaser · 2026 · com.bosslab.game</p>
+</footer>
+</body>
+</html>
